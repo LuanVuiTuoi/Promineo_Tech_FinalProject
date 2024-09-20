@@ -3,23 +3,23 @@ import java.util.*;
 
 public class Player {
 	private List<Card> hand = new ArrayList<Card>();
-	public int score;
-	public String name;
+	private int score;
+	private String name;
 	
 	public Player() {
-		this.score = 0;
-		this.name = "";
+		this.setScore(0);
+		this.setName("");
 	}
 	
 	public Player(String name) {
-		this.score = 0;
-		this.name = name;
+		this.setScore(0);
+		this.setName(name);
 	}
 	
 	// prints out information about the player 
 	// and calls the describe method for each card in the Hand List
 	public void describe() {
-		System.out.println(this.name);
+		System.out.println(this.getName());
 		for(Card card : hand) {
 			card.describe();
 		}
@@ -38,7 +38,23 @@ public class Player {
 	
 	// adds 1 to the Player’s score field
 	public void incrementScore() {
-		this.score += 1;
+		this.setScore(this.getScore() + 1);
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

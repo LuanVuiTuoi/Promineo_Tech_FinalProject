@@ -35,34 +35,34 @@ public class App {
 			
 			System.out.println("Round " + r);
 			System.out.println("------");
-			System.out.print(player1.name + " Card: ");
+			System.out.print(player1.getName() + " Card: ");
 			p1Card.describe();
-			System.out.print(player2.name + " Card: ");
+			System.out.print(player2.getName() + " Card: ");
 			p2Card.describe();
 			
 			if(p1Card.getValue() == p2Card.getValue()) {
 				System.out.println("Tie: No point awarded.");
 			}else if(p1Card.getValue() > p2Card.getValue()) {
-				System.out.println(player1.name + " Wins.");
+				System.out.println(player1.getName() + " Wins.");
 				player1.incrementScore();
 			}else {
-				System.out.println(player2.name + " Wins.");
+				System.out.println(player2.getName() + " Wins.");
 				player2.incrementScore();
 			}
 			
 			System.out.printf("Current Score: %s: %d - %s %d %n",
-					player1.name,player1.score,player2.name,player2.score);
+					player1.getName(),player1.getScore(),player2.getName(),player2.getScore());
 			System.out.println("------");
 			
 		}
 		
 		System.out.printf("Final Score: %s: %d - %s: %d%n",
-				player1.name,player1.score,player2.name,player2.score);
+				player1.getName(),player1.getScore(),player2.getName(),player2.getScore());
 		
-		if(player1.score > player2.score) {
-			System.out.println("Winner: " + player1.name);
-		}else if(player1.score < player2.score) {
-			System.out.println("Winner: " + player2.name);
+		if(player1.getScore() > player2.getScore()) {
+			System.out.println("Winner: " + player1.getName());
+		}else if(player1.getScore() < player2.getScore()) {
+			System.out.println("Winner: " + player2.getName());
 		}else {
 			System.out.println("Draw");
 		}
